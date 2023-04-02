@@ -1,43 +1,14 @@
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-//   name: "Maximilian",
-//   age: 30,
-// };
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "Maximilian",
-//   age: 30,
-//   hobbies: ["Sports", "Cooking"],
-//   role: [2, "author"],
-// };
-// person.role.push("admin");  // push()는 Tuple에서 허용됨
-// person.role[1] = 10;  // !!!ERROR!!!
-// person.role = [];  // !!!ERROR!!! 배열 길이에 대한 제한
-// let favoriteActivities: string[];
-// favoriteActivities = ["Sports"];
-// console.log(`person.name : ${person.name}`);
-// for (const hobby of person.hobbies) {
-//   console.log(`hobby : ${hobby.toUpperCase()}`);
-//   // console.log(hobby.map(()));  // !!!ERROR!!!
-// }
-var Role;
-(function (Role) {
-    Role["ADMIN"] = "ADMIN";
-    Role[Role["READ_ONLY"] = 100] = "READ_ONLY";
-    Role["AUTHOR"] = "author";
-})(Role || (Role = {}));
-var person = {
-    name: "Maximilian",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.ADMIN,
-};
-if (person.role === Role.ADMIN) {
-    console.log("is ".concat(Role.ADMIN));
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
+var combinedAges = combine(30, 26);
+console.log(combinedAges);
+var combinedNames = combine("Max", "Anna");
+console.log(combinedNames);
