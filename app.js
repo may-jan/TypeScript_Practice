@@ -7,3 +7,8 @@ userInput = "Max";
 if (typeof userInput === "string") {
     userName = userInput;
 }
+// never : 아무것도 반환하지 않는 타입
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+}
+generateError("An error occurred!", 500);
