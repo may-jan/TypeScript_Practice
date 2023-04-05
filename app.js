@@ -1,17 +1,9 @@
-function add(n1, n2) {
-    return n1 + n2;
+// unknown : 사용자가 무엇을 입력하는지 알 수 없는 경우 타입, 어떤 값이든 저장 가능
+var userInput;
+var userName;
+userInput = 5;
+userInput = "Max";
+// unknown은 현재 저장된 타입을 확인해야 할당이 가능하다 (타입 체크가 필요!)
+if (typeof userInput === "string") {
+    userName = userInput;
 }
-function printResult(num) {
-    console.log("Result : ".concat(num));
-}
-function addAndHnadle(n1, n2, cb) {
-    var result = n1 + n2;
-    cb(result);
-}
-printResult(add(5, 12));
-var combineValues;
-combineValues = add;
-console.log(combineValues(2, 8));
-addAndHnadle(10, 20, function (res) {
-    console.log("res :  ".concat(res));
-});
